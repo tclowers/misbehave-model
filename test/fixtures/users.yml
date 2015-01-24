@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  alias: MyString
+  email: MyString
+  gender: 1
+  password: MyString
+  salt: MyString
+  access_pass: MyString
+
+two:
+  alias: MyString
+  email: MyString
+  gender: 1
+  password: MyString
+  salt: MyString
+  access_pass: MyString
