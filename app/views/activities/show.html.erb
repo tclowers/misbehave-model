@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @activity.name %>
+</p>
+
+<p>
+  <strong>Active Question:</strong>
+  <%= @activity.active_question %>
+</p>
+
+<p>
+  <strong>Active Prop Question:</strong>
+  <%= @activity.active_prop_question %>
+</p>
+
+<p>
+  <strong>Receptive Question:</strong>
+  <%= @activity.receptive_question %>
+</p>
+
+<p>
+  <strong>Receptive Prop Question:</strong>
+  <%= @activity.receptive_prop_question %>
+</p>
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

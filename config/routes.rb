@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :quizzes
+
+  resources :items
+
+  resources :props
+
+  resources :activities
+
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  active_description: MyString
+  receptive_description: MyString
+
+two:
+  active_description: MyString
+  receptive_description: MyString
