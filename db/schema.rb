@@ -14,70 +14,67 @@
 ActiveRecord::Schema.define(version: 20150125000033) do
 
   create_table "activities", force: :cascade do |t|
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.text     "active_prop_question",    limit: 65535
-    t.text     "active_question",         limit: 65535
-    t.text     "receptive_question",      limit: 65535
-    t.text     "receptive_prop_question", limit: 65535
-    t.string   "name",                    limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.text     "active_prop_question"
+    t.text     "active_question"
+    t.text     "receptive_question"
+    t.text     "receptive_prop_question"
+    t.string   "name"
   end
 
   create_table "items", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.text     "description",     limit: 65535
-    t.text     "part_identifier", limit: 65535
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
-    t.decimal  "price",                         precision: 12, scale: 2
-    t.decimal  "shipping_fee",                  precision: 12, scale: 2
+    t.string   "name"
+    t.text     "description"
+    t.text     "part_identifier"
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.decimal  "price",           precision: 12, scale: 2
+    t.decimal  "shipping_fee",    precision: 12, scale: 2
   end
 
   create_table "preferences", force: :cascade do |t|
-    t.boolean  "active",      limit: 1
-    t.boolean  "receptive",   limit: 1
-    t.integer  "activity_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.boolean  "active"
+    t.boolean  "receptive"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "preferences", ["activity_id"], name: "index_preferences_on_activity_id", using: :btree
+  add_index "preferences", ["activity_id"], name: "index_preferences_on_activity_id"
 
   create_table "props", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "quiz_questions", force: :cascade do |t|
-    t.integer  "quiz_id",     limit: 4
-    t.integer  "activity_id", limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "quiz_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "quiz_questions", ["activity_id"], name: "index_quiz_questions_on_activity_id", using: :btree
-  add_index "quiz_questions", ["quiz_id"], name: "index_quiz_questions_on_quiz_id", using: :btree
+  add_index "quiz_questions", ["activity_id"], name: "index_quiz_questions_on_activity_id"
+  add_index "quiz_questions", ["quiz_id"], name: "index_quiz_questions_on_quiz_id"
 
   create_table "quizzes", force: :cascade do |t|
-    t.text     "name",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "alias",       limit: 255
-    t.string   "email",       limit: 255
-    t.integer  "gender",      limit: 4
-    t.string   "password",    limit: 255
-    t.string   "salt",        limit: 255
-    t.string   "access_pass", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "alias"
+    t.string   "email"
+    t.integer  "gender"
+    t.string   "password"
+    t.string   "salt"
+    t.string   "access_pass"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_foreign_key "preferences", "activities"
-  add_foreign_key "quiz_questions", "activities"
-  add_foreign_key "quiz_questions", "quizzes"
 end

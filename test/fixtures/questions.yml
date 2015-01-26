@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  verbiage: MyText
+  active: false
+  receptive: false
+  type: 
+  activity_id: 
+
+two:
+  verbiage: MyText
+  active: false
+  receptive: false
+  type: 
+  activity_id: 

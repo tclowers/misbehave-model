@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Verbiage:</strong>
+  <%= @question.verbiage %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @question.active %>
+</p>
+
+<p>
+  <strong>Receptive:</strong>
+  <%= @question.receptive %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @question.type %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @question.activity %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
