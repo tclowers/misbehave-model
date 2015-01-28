@@ -11,15 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125000033) do
+ActiveRecord::Schema.define(version: 20150128181416) do
 
   create_table "activities", force: :cascade do |t|
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.text     "active_prop_question"
-    t.text     "active_question"
-    t.text     "receptive_question"
-    t.text     "receptive_prop_question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "name"
   end
 
@@ -49,6 +45,18 @@ ActiveRecord::Schema.define(version: 20150125000033) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "verbiage"
+    t.boolean  "active"
+    t.boolean  "receptive"
+    t.string   "type"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "questions", ["activity_id"], name: "index_questions_on_activity_id"
 
   create_table "quiz_questions", force: :cascade do |t|
     t.integer  "quiz_id"
